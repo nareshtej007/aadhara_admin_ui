@@ -1,0 +1,49 @@
+   <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="card-body">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Sr.No</th>
+                      <th>Salon Id</th>
+                  
+                      <th>Salon Name</th>
+                     
+                     
+                      <th>Request Date</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+         
+                  <tbody>
+                    
+                    <tr *ngFor='let salons of salondetails| paginate : {itemsPerPage:5,currentPage:p};let i=index '>
+                      
+                      <td>{{i+1}}</td>
+                      <td>{{salons._id}}</td>
+                    
+                      <td>{{salons.name_of_salon}}</td>
+                   
+                      <td>{{salons.request_date}}</td>
+     
+                     
+                      <td><button (click)="salonEdit(salons._id)" class="badge badge-success">APPROVE</button><button (click)="userDelete(salons._id)" class="badge badge-danger">REJECT</button></td>
+                      <td>
+                        <!-- <span class="badge badge-success">Active</span> -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+              </div>
+            
+            </div>
+          </div>
+        
+    
+      
+    </div>
+       

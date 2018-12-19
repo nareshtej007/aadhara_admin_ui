@@ -1,0 +1,337 @@
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="type_of_salon">Type</label>
+            <select formControlName="type" class="form-control">
+              <option selected>Choose...</option>
+              <option value="salon">salon</option>
+              <option value="spa">spa</option>
+              <option value="beauty center">beauty center</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+      <div class="col-md-4 mb-3">
+        <label for="salonName">Name Of The Salon</label>
+        <input type="text" class="form-control" formControlName="salonName" placeholder="Salon name"  required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First name"  required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" formControlName="lastName" placeholder="Last name"  required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="number">Phone Number</label>
+            <input type="number" class="form-control" formControlName="number" placeholder="Number"  required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+              <label for="address_of_owner">Address Of Owner</label>
+    <textarea class="form-control" formControlName="address_of_owner"></textarea>
+              
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="address_of_salon">Address Of Salon</label>
+    <textarea class="form-control" formControlName="address_of_salon"></textarea>
+              
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="email_of_owner">Email Of Owner</label>
+              <input type="text" class="form-control" formControlName="email_of_owner" placeholder="Email Of Owner" required>
+              <div class="invalid-feedback">
+                Please provide a valid email.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="email_of_salon">Email Of Salon</label>
+              <input type="text" class="form-control" formControlName="email_of_salon" placeholder="Email Of Saloon" required>
+              <div class="invalid-feedback">
+                Please provide a valid email.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="city_of_owner">City Of Owner</label>
+              <input type="text" class="form-control" formControlName="city_of_owner" placeholder="Enter City Of Owner" required>
+              <div class="invalid-feedback">
+                Please provide a valid country.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="city_of_salon">City Of Salon</label>
+              <input type="text" class="form-control" formControlName="city_of_salon" placeholder="Enter City Of Salon" required>
+              <div class="invalid-feedback">
+                Please provide a valid country.
+              </div>
+            </div>
+          
+            <div class="col-md-4 mb-3">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" formControlName="country" placeholder="Country" required>
+                <div class="invalid-feedback">
+                  Please provide a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="pin_of_owner">Pin Of Owner</label>
+                  <input type="number" class="form-control" formControlName="pin_of_owner" placeholder="Enter Zip" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Zip.
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="pin_of_salon">Pin Of Salon</label>
+                  <input type="number" class="form-control" formControlName="pin_of_salon" placeholder="Enter Zip" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Zip.
+                  </div>
+                </div>
+     
+
+                <!-- <div class="col-md-4 mb-3">
+                  
+                      <label for="servicecategory">Service Category</label>
+                      <div class="input-group">
+                    <input type="text" class="form-control" placeholder="enter Services category" id="service" name="servicecategory" [(ngModel)]="category" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="button" (click)="onClick()">
+                            <i class="fa fa-plus-square"></i>
+            </button>
+                    </div>
+                </div>
+                  <select id="servicecategory" class="form-control">
+                    <option selected>Choose...</option>
+                    <option value="waxing&threading">Waxing&Threading</option>
+                    <option value="manicure&padicure">Manicure & Padicure</option>
+                    
+                    <option id="3" value="facial">Facial</option>
+                    <option *ngFor="let tasks of tasks" value="{{tasks.name}}">
+                      {{ tasks.name }} </option>
+                  </select>
+                </div>
+
+
+                  <div class="col-md-4 mb-4">
+                      <label for="service1">Services</label>
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="enter Services" id="service" name="services" [(ngModel)]="services" />
+                          <input type="number" class="form-control" placeholder="enter price" id="price" name="price"[(ngModel)]="qty"/>
+                          <div class="input-group-btn">
+                              <button class="btn btn-primary" type="button" (click)="addservices()">
+                                  <i class="fa fa-plus-square"></i>
+                  </button>
+                  </div>
+                      </div>
+                   
+                      
+                        <select id="service1" class="form-control">
+                          <option selected>Choose...</option>
+                          
+                          <option *ngFor="let services of service" value="{{services.name}}">
+                            {{ services.name }} </option>
+                           </select>
+                    
+                  </div> -->
+                  
+                          
+
+                  <div class="col-md-4 mb-3">
+                        <label for="gender">Gender</label>
+                        <select formControlName="gender" class="form-control">
+                          <option selected>Choose...</option>
+                          <option value="f">Female</option>
+                          <option value="m">Male</option>
+                          
+                          <option id="3" value="o">other</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                          <label for="doj">Date Of Joining</label>
+                          <input type="date" class="form-control" formControlName="doj" placeholder="Enter Date Of Joining" >
+                          
+                        </div>
+                        <!-- <div class="col-md-4 mb-3">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" id="age" placeholder="Enter age" >
+                            
+                          </div>
+                           -->
+                              <div class="col-md-2">
+                                  <label for="salon_open_time">Opening_Time</label>
+                                  <input type="time" class="form-control" formControlName="salon_open_time" placeholder="Enter Time" >
+                                  
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="salon_close_time">Closing_Time</label>
+                                    <input type="time" class="form-control" formControlName="salon_close_time" placeholder="Enter Time" >
+                                    
+                                  </div>
+
+                                  <div class="col-md-4 mb-3">
+                                      <label for="emiratedid">Emirates Id</label>
+                                      <input type="text" class="form-control" formControlName="emiratedid" placeholder="Emirates Id">
+                                      <div class="invalid-feedback">
+                                          Please give The Valid Id.
+                                        </div>
+                                      </div>
+                                      <!-- <div class="col-md-4 mb-3">
+                                          <label for="experience">Experience</label>
+                                          <select id="experience" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                          </select>
+                                        </div> -->
+
+                                        <!-- <div class="col-md-4 mb-3">
+                                            <label for="emirates">Emirates</label>
+                                            <input type="file" class="form-control-file" id="emirates">
+                                            <div class="invalid-feedback">
+                                                Please Upload a File.
+                                              </div>
+                                            </div> -->
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="image">Salon Image</label>
+                                                <input type="file" class="form-control-file" formControlName="image">
+                                                <div class="invalid-feedback">
+                                                   one image	
+                                                    minimum - banner size for mobile.
+                                                  </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                  <label for="service1">Services  <br>   </label>
+                                                
+                                                    <button type="button" class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'">
+                                                      <i class="fa fa-plus-square"></i>
+                                        </button>
+                                        </div>
+                                        <div id="id01" class="modal">
+                                
+                                          <form class="modal-content animate">
+                                            <div class="imgcontainer">
+                                              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            
+                                            </div>
+                                        
+                                            <div class="container">
+                                              <div>
+                                              <label for="servicecategory"><b>Service Category</b></label>
+                                              <input type="text" placeholder="Enter Category" name="servicecategory" id="servicecategory"></div>
+                                       
+                                              <label for="service1"><b>Service</b></label>
+                                              <input type="text" placeholder="Enter Service" name="service"  [(ngModel)]="services" >
+                                              <input type="number" class="form-control" placeholder="Enter Price" id="price" name="price"[(ngModel)]="qty"/>
+                                             <div>   
+                                             <button type="button" class="button1" (click)="addservices()">Add</button>
+                                            
+                                              <select id="service1" class="form-control select">
+                                                <option selected>Choose...</option>
+                                                
+                                                <option *ngFor="let services of service" value="{{services.name}}">
+                                                  {{ services.name }} </option>
+                                                 </select>
+                                                 </div>
+                                                 
+                                            </div>
+                                        
+                                            <div class="container" style="background-color:#f1f1f1">
+                                              <!-- <button type="submit" class="button1">Save</button>  -->
+                                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                             
+                                            </div>
+                                          </form>
+                                        </div>
+                                       
+                                        
+                
+                                     
+                                      
+                                        
+                                        <span class="border border-primary" style="width: -webkit-fill-available;
+                                        background-color: dimgrey;
+                                        color: antiquewhite;">
+                                          PAYMENT INFORMATION
+                                        </span>  
+                                        <br>  
+                                        
+                                        
+                                        <div class="col-md-4 mb-3">
+                                            <label for="bankName">Bank Name</label>
+                                            <input type="text" class="form-control" formControlName="bankName" placeholder="Bank name"  required>
+                                            <div class="invalid-feedback">
+                                              Give Valid name
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                              <label for="branch">Branch</label>
+                                              <input type="text" class="form-control" formControlName="branch" placeholder="Branch name" required>
+                                              <div class="invalid-feedback">
+                                                Give Valid Branch
+                                              </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="accNo">Bank Account Number</label>
+                                                <input type="number" class="form-control" formControlName="accNo" placeholder="Account Number" required>
+                                                <div class="invalid-feedback">
+                                                  Mandatory
+                                                </div>
+                                              </div>
+
+                                              <div class="col-md-4 mb-3">
+                                                  <label for="holderName">Account Holder Name</label>
+                                                  <input type="text" class="form-control" formControlName="holderName" placeholder="Account Holder Name" required>
+                                                  <div class="invalid-feedback">
+                                                    Mandatory
+                                                  </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="ibanNo">Iban Number</label>
+                                                    <input type="number" class="form-control" formControlName="ibanNo" placeholder="Iban Number" value="" required>
+                                                    <div class="invalid-feedback">
+                                                      Mandatory
+                                                    </div>
+                                                  </div>
+                               
+    </div>
+    
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Update</button>
+  </form>
+  
+ 
+  
+  

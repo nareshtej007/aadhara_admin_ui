@@ -1,0 +1,275 @@
+
+<form (ngSubmit)="addSalon()" [formGroup]="salonRegister" class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="type_of_salon">Type</label>
+            <select formControlName="type_of_salon" class="form-control">
+              <option selected>Choose...</option>
+              <option value="salon">salon</option>
+              <option value="spa">spa</option>
+              <option value="beauty center">beauty center</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="user_type">User Type</label>
+            <input type="text" class="form-control" formControlName="user_type"  [ngClass]="{ 'is-invalid': submitted && f.user_type.errors }">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+      <div class="col-md-4 mb-3 formGroup">
+        <label>Salon Name</label>
+        <input type="text" formControlName="name_of_salon" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name_of_salon.errors }" />
+        <div *ngIf="submitted && f.name_of_salon.errors" class="invalid-feedback">
+            <div *ngIf="f.name_of_salon.errors.required">Salon Name is required</div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>First Name</label>
+        <input type="text" formControlName="first_name_salon_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name_salon_owner.errors }" />
+        <div *ngIf="submitted && f.first_name_salon_owner.errors" class="invalid-feedback">
+            <div *ngIf="f.first_name_salon_owner.errors.required">First Name is required</div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Last Name</label>
+        <input type="text" formControlName="last_name_salon_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name_salon_owner.errors }" />
+        <div *ngIf="submitted && f.last_name_salon_owner.errors" class="invalid-feedback">
+            <div *ngIf="f.last_name_salon_owner.errors.required">Last Name is required</div>
+        </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Phone Number</label>
+          <input type="number" formControlName="salon_owner_phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.salon_owner_phone.errors }" />
+          <div *ngIf="submitted && f.salon_owner_phone.errors" class="invalid-feedback">
+              <div *ngIf="f.salon_owner_phone.errors.required">number is required</div>
+              <div *ngIf="f.salon_owner_phone.errors.minlength">Enter Valid Phone Number</div>
+          </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+              <label for="address_of_owner">Address Of Owner</label>
+    <textarea class="form-control" formControlName="address_of_owner"[ngClass]="{ 'is-invalid': submitted && f.address_of_owner.errors }"></textarea>
+              
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="address_of_salon">Address Of Salon</label>
+    <textarea class="form-control" formControlName="address_of_salon" [ngClass]="{ 'is-invalid': submitted && f.address_of_salon.errors }"></textarea>
+              
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label>Email Of Owner</label>
+              <input type="text" formControlName="email_of_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_of_owner.errors }" />
+              <div *ngIf="submitted && f.email_of_owner.errors" class="invalid-feedback">
+                  <div *ngIf="f.email_of_owner.errors.required">Email is required</div>
+                  <div *ngIf="f.email_of_owner.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label>Email Of Salon</label>
+              <input type="text" formControlName="email_of_salon" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_of_salon.errors }" />
+              <div *ngIf="submitted && f.email_of_salon.errors" class="invalid-feedback">
+                  <div *ngIf="f.email_of_salon.errors.required">Email is required</div>
+                  <div *ngIf="f.email_of_salon.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Owner's City</label>
+          <input type="text" formControlName="city_of_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city_of_owner.errors }" />
+          <div *ngIf="submitted && f.city_of_owner.errors" class="invalid-feedback">
+              <div *ngIf="f.city_of_owner.errors.required">City is required</div>
+            
+          </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="city_of_salon">Salon's City</label>
+              <input type="text" formControlName="city_of_salon" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city_of_salon.errors }" />
+              <div *ngIf="submitted && f.city_of_salon.errors" class="invalid-feedback">
+                  <div *ngIf="f.city_of_salon.errors.required">City is required</div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="country">Country</label>
+                <input type="text" formControlName="country_of_salon" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country_of_salon.errors }" />
+              <div *ngIf="submitted && f.country_of_salon.errors" class="invalid-feedback">
+                  <div *ngIf="f.country_of_salon.errors.required">Country is required</div>
+              </div>
+            </div>
+              <div class="col-md-4 mb-3">
+                  <label for="pin_of_owner">Owner's Area Pincode</label>
+                  <input type="number" formControlName="pin_of_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pin_of_owner.errors }" />
+                  <div *ngIf="submitted && f.pin_of_owner.errors" class="invalid-feedback">
+                      <div *ngIf="f.pin_of_owner.errors.required">Pin is required</div>
+                </div>
+              </div>
+                <div class="col-md-4 mb-3">
+                  <label for="pin_of_salon">Salon's Area Pincode</label>
+                  <input type="number" formControlName="pin_of_salon" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pin_of_salon.errors }" />
+                  <div *ngIf="submitted && f.pin_of_salon.errors" class="invalid-feedback">
+                      <div *ngIf="f.pin_of_salon.errors.required">Pin is required</div>
+                </div>
+                </div>
+
+               
+                          
+
+                  <div class="col-md-4 mb-3">
+                        <label for="gender">Gender</label>
+                        <select formControlName="gender_of_owner" class="form-control">
+                          <option selected>Choose...</option>
+                          <option value="f">Female</option>
+                          <option value="m">Male</option>
+                          
+                          <option id="3" value="o">other</option>
+                        </select>
+                      </div>
+
+                     
+                       
+                              <div class="col-md-2">
+                                  <label for="salon_open_time">Opening Time</label>
+                                  <input type="time" formControlName="salon_open_time" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.salon_open_time.errors }" />
+                          <div *ngIf="submitted && f.salon_open_time.errors" class="invalid-feedback">
+                              <div *ngIf="f.salon_open_time.errors.required">Time is required</div>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="salon_close_time">Closing Time</label>
+                                    <input type="time" formControlName="salon_close_time" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.salon_close_time.errors }" />
+                                    <div *ngIf="submitted && f.salon_close_time.errors" class="invalid-feedback">
+                                        <div *ngIf="f.salon_close_time.errors.required">Time is required</div>
+                                            
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-4 mb-3">
+                                      <label for="emirates_id_of_owner">Emirates Id</label>
+                                      <input type="text" formControlName="emirates_id_of_owner" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emirates_id_of_owner.errors }" />
+                                      <div *ngIf="submitted && f.emirates_id_of_owner.errors" class="invalid-feedback">
+                                          <div *ngIf="f.emirates_id_of_owner.errors.required">ID is required</div>
+                                          <div *ngIf="f.emirates_id_of_owner.errors.minlength">Please Enter Valid Id</div>
+                                      </div>
+                                     </div>
+                                        
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="image_of_salon">Salon Image</label>
+                                                <input type="file" class="form-control-file" formControlName="image_of_salon" [ngClass]="{ 'is-invalid': submitted && f.image_of_salon.errors }" >
+                                                <div class="invalid-feedback">
+                                                   one image	
+                                                    minimum - banner size for mobile.
+                                                  </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                  <label for="service1">Services  <br>   </label>
+                                                
+                                                    <button type="button" class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'">
+                                                      <i class="fa fa-plus-square"></i>
+                                        </button>
+                                        </div>
+                                        <div id="id01" class="modal modal-content animate">
+                                
+                                          
+                                            <div class="imgcontainer">
+                                              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            
+                                            </div>
+                                        
+                                            <div class="container">
+                                              <div >
+                                              <label for="servicecategory"><b>Service Category</b></label>
+                                              <input type="text" placeholder="Enter Category" name="ServicCategory" formControlName="ServicCategory">
+                                              </div>
+                                              <label for="service"><b>Service</b></label>
+                                              
+                                              <input type="text" placeholder="Enter Service" name="service"   [(ngModel)]="services" [ngModelOptions]="{standalone: true}" >
+                                              <input type="number" class="form-control" placeholder="Enter Price" name="price" [(ngModel)]="qty" [ngModelOptions]="{standalone: true}"/>
+                                              
+                                             <div>   
+                                             <button type="button" class="button1" (click)="addservices()">Add</button>
+                                            
+                                              <select id="service1" class="form-control select">
+                                                <option selected>Choose...</option>
+                                                
+                                                <option *ngFor="let services of service" value="{{services.name}}">
+                                                  {{ services.name }} </option>
+                                                 </select>
+                                                 
+                                             </div>                                           
+                                        
+                                            <div class="container" style="background-color:#f1f1f1">
+                                              <!-- <button type="submit" class="button1">Save</button>  -->
+                                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                             
+                                            </div>
+                                         
+                                        </div>
+                                        </div>
+                                        
+                
+                                     
+                                      
+                                        
+                                        <span class="border border-primary" style="width: -webkit-fill-available;
+                                        background-color: dimgrey;
+                                        color: antiquewhite;">
+                                          PAYMENT INFORMATION
+                                        </span>  
+                                        <br>  
+                                        
+                                        
+                                        <div class="col-md-4 mb-3">
+                                            <label for="bank_name">Bank Name</label>
+                                            <input type="text" formControlName="bank_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bank_name.errors }" />
+                                      <div *ngIf="submitted && f.bank_name.errors" class="invalid-feedback">
+                                          <div *ngIf="f.bank_name.errors.required">Mandatory</div>
+                                          </div>
+                                        </div>
+                                          <div class="col-md-4 mb-3">
+                                              <label for="branch_of_bank">Branch</label>
+                                              <input type="text" formControlName="branch_of_bank" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.branch_of_bank.errors }" />
+                                      <div *ngIf="submitted && f.branch_of_bank.errors" class="invalid-feedback">
+                                          <div *ngIf="f.branch_of_bank.errors.required">Mandatory</div>
+                                            </div>
+                                          </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="bank_account_number">Bank Account Number</label>
+                                                <input type="number" formControlName="bank_account_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bank_account_number.errors }" />
+                                      <div *ngIf="submitted && f.bank_account_number.errors" class="invalid-feedback">
+                                          <div *ngIf="f.bank_account_number.errors.required">Mandatory</div>
+                                          <div *ngIf="f.bank_account_number.errors.minlength">Enter Valid Account Number</div>
+                                              </div>
+                                            </div>
+
+                                              <div class="col-md-4 mb-3">
+                                                  <label for="account_holder_name">Account Holder Name</label>
+                                                  <input type="text" formControlName="account_holder_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.account_holder_name.errors }" />
+                                      <div *ngIf="submitted && f.account_holder_name.errors" class="invalid-feedback">
+                                          <div *ngIf="f.account_holder_name.errors.required">Mandatory</div>
+                                                </div>
+                                              </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="iban_number">Iban Number</label>
+                                                    <input type="text" formControlName="iban_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.iban_number.errors }" />
+                                                    <div *ngIf="submitted && f.iban_number.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.iban_number.errors.required">Mandatory</div>
+                                                        <div *ngIf="f.iban_number.errors.minlength">Enter Valid Account Number</div>
+                                                  
+                                                   </div>
+                                                   </div>
+                                                  </div>
+    
+    <button class="btn btn-primary">Submit</button>
+    <b>{{message}}</b>
+  
+  </form>
+  
+ 
+  
+  
