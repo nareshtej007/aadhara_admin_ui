@@ -11,6 +11,7 @@ import { CustomerProfileComponent } from './customerProfile.component';
 
 // Components Routing
 import { CustomerRoutingModule } from './customer-routing.module';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { CustomerRoutingModule } from './customer-routing.module';
   ],
   declarations: [
     CustomerListComponent,
-    CustomerProfileComponent
+    CustomerProfileComponent,
+    EditCustomerComponent
 
   ]
 })

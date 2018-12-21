@@ -36,13 +36,22 @@
           </div>
         </div> -->
 
-       
-        <div class="row">  
+       <!-- this is starting  -->
+        <!-- <div class="row">  
             <div class="col-lg-offset-8 col-lg-4">  
                 <input type="text" class="form-control" placeholder="Filter user by Name, UserId..." ng-model="search" />  
-                <button (click)="sortUser()" class="badge badge-success">SortByName</button>
+                <button (click)="sortUser()" class="badge badge-success" [(ngModel)]="sortUser">SortByName</button>
             </div>  
-        </div>  
+        </div>  -->
+
+        <div>
+        <form ng-submit = "searchByAdmin()">
+            <input type="text" class="form-control" placeholder="Filter user by Name, UserId..." ng-model="search" /> <br>
+            <input type="submit" value="Search"/>
+            <button (click)="sortUser()" class="badge badge-success" [(ngModel)]="sortUser">SortByName</button>
+
+        </form>
+        </div>
         <hr /> 
 
         <div class="table-responsive">  
@@ -51,8 +60,12 @@
                 <strong>Count per page:</strong>  
                 {{tableParams.count()}}  
             </p>   -->
+
+<!-- 
+            <input type="text" class="form-control" placeholder="Filter user by Name, UserId..." ng-model="searchText" /> <br>
+            <input type="submit" value="search"  (click)="searchByAdmin(name)" /> -->
             <table class="table table-striped table-bordered" ng-table="tableParams"template-pagination="custom/pager">  
-                <tr ng-repeat="let users of usersdetails | filter:search">  
+                <tr ng-repeat="let users of usersdetails | filter:searchText | filter: sortUser">  
                     <thead>
                         <tr>
         
@@ -79,10 +92,18 @@
                           <td>{{users.status}}</td>
                           <td></td>
         
-                          <td><button (click)="salonEdit(salons._id)" class="badge badge-success">EDIT</button><button (click)="deleteUserByAdmin(users._id)" class="badge badge-danger">DELETE</button></td>
+                          <td><button (click)="userEdit(users._id)" class="badge badge-success">EDIT</button><button (click)="deleteUserByAdmin(users._id)" class="badge badge-danger" >DELETE</button></td>
                          
                         </tr>
+                        <!-- <script>
+                          $(document).ready(function() {
+                            $('#example').DataTable( {
+                                "pagingType": "full_numbers"
+                            } );
+                        } );
+                        </script> -->
                       </tbody> 
+                     
                 </tr>  
             </table>  
             

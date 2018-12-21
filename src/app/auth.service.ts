@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Injectable({
@@ -39,12 +39,20 @@ export class AuthService {
     return this.http.post(`http://127.0.0.1:4008/removeUser/`, {_id})
  
   }
+  sortUser() {
+    return this.http.get(`http://127.0.0.1:4008/sortName`,{})
+  
+  }
 
-  // sortUser() {  
-  //   console.log("time time ........");
-  //   return this.http.post(`http://127.0.0.1:4003/removeUser/`)
-    
-  // }
+  searchByAdmin(usersdetails) {
+    return this.http.post('http://127.0.0.1:4008/filterUser',usersdetails, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+      
+    })
+
+  }
 
 
   

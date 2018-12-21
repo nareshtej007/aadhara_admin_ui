@@ -12,6 +12,7 @@ export class CustomerListComponent implements OnInit{
 
   usersdetails :any = [];
   message: String;
+  filteredUsers : any = []; 
   constructor(private http:HttpClient, private router : Router ,private route :ActivatedRoute,private services:AuthService) { }
 
 
@@ -25,7 +26,6 @@ export class CustomerListComponent implements OnInit{
       console.log("hi hello", this.usersdetails);
     });
   }
-
 
 //   editUserByAdmin(id) {
 //     // this.form.setValue({
@@ -47,10 +47,39 @@ deleteUserByAdmin(_id): void {
     console.log(_id);
     console.log("This is user data",result);
      this.message = "Customer Removed Successfully!"
+    this.router.navigate([ '../customerList' ], { relativeTo: this.route });
+     
   });
+  
 }
 
 sortUser() {
+  this.services.sortUser()
+  .subscribe(data => {
+    //console.log("Check it------>",JSON.stringify(data));
+      //let result = data.result;
+     //console.log("Result---> ", result);
+      this.usersdetails = this.usersdetails.concat(data["result"]);
+     console.log("hi hello", this.usersdetails);
+     //this.router.navigate([ '../customerList' ], { relativeTo: this.route });
+   });
+  
+}
+
+searchByAdmin(usersdetails): void {
+  this.services.searchByAdmin(usersdetails)
+  .subscribe(data => {
+    //console.log("Check it------>",JSON.stringify(data));
+      //let result = data.result;
+      this.ngOnInit();
+      console.log('this is some$$$$$$$$$$$4',  this.ngOnInit() )
+     console.log("Result---> ", data);
+      this.usersdetails = this.usersdetails.concat(data["result"]);
+     console.log("hi hello", this.usersdetails);
+   
+     
+     //this.router.navigate([ '../customerList' ], { relativeTo: this.route });
+   });
   
 }
 
